@@ -22,24 +22,9 @@ angular.module('olympics',['ui.router'])
     url: '/:sportName',
     templateUrl: 'sports/sports-medals.html',
     resolve:{
-      sportService:function($q){
-        return $q((resolve, reject)=> {
-          let sport = {
-            "name":"Judo",
-            "goldMedals":[
-            {
-              "division": "Men -60kg",
-              "country": "JPN",
-              "year":2012
-            },
-            {
-              "division":"Women's -48kg",
-              "country" : "ARG",
-              "year": 2015
-            }]
-          };
-          resolve({data: sport});
-        })
+      sportService:function($http, $stateParams){
+        return $http.get(`/sports/${$stateParams.sportName}`);
+
       }
     },
     controller:function(sportService){

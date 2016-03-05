@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Cycling",
+    "goldMedals": [
+      { "division": "Men's Sprint","country": "UK","year": 2012},
+      { "division": "Women's Sprint","country": "Australia","year": 2012}
+    ]
+  },
+  {
+    "name": "Weightlifting",
+    "goldMedals": [
+      { "division": "Men's +120Kg","country": "ARG","year": 2012},
+      { "division": "Women's + 70Kg","country": "USA","year": 2012}
+    ]
+  }
+]
