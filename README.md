@@ -1,8 +1,10 @@
 # MEAN Stack
 
-Code for the MEAN Soup to Bits
+List of medals for the summer olympics.
 
-* MongoDB
-* Express
-* Angular
-* Node
+Developed using:
+
+*  M -MongoDB
+*  E -Express
+*  A -Angular
+*  N - Node
