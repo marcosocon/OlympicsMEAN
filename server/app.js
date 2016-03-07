@@ -40,12 +40,20 @@ app.get("/sports/:name", (request, response) => {
 
 app.post("/sports/:name/medals", jsonParser, (request, response) => {
   let sportName = request.params.name;
-  let newMedal = request.body.medal;
+  let newMedal = request.body.medal || {};
+  if(!newMedal.division || !newMedal.country || !newMedal.year){
+  response.sendStatus(400);
+  }
+  let sports = mongoUtil.sports();
+  let query = {name: sportName};
+  let update = {$push: {goldMedals: newMedal}};
 
-  console.log( "Sport name: ", sportName );
-  console.log( "Medal: ", newMedal );
-
+  sports.findOneAndUpdate(query, update, (err, res) => {
+  if(err){
+    response.sendStatus(400);
+  }
   response.sendStatus(201);
+  })
 });
 
 
